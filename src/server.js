@@ -1,12 +1,14 @@
 'use strict'
 
 const express = require ('express');
-const bcrypt = require ('bcrypt');
-const base64 = require ('base-64');
 const app = express();
+
+const usersRoutes = require ('./routes/users.js');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(usersRoutes);
 
 module.exports = {
   app: app,
